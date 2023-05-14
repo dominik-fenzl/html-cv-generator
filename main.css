@@ -1,0 +1,137 @@
+
+@font-face {
+    font-family: jost;
+    src: url("Fonts/Jost-VariableFont_wght.ttf") format("truetype");
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "jost", sans-serif;
+    font-weight: 200;
+    font-size: 12pt;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.side-container {
+    width: 75mm;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #b9bcc9;
+    align-items: flex-start;
+    padding: 10mm;
+    gap: 8mm;
+}
+
+.time-line-container {
+    width: calc(100vw - 75mm);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-container-image {
+    width: 40mm;
+    height: 40mm;
+    
+}
+
+.side-container-personal-info {
+    /* Bold text used for birthday, address etc.. */
+    font-weight: 400;
+
+}
+
+.side-container-section-title {
+    font-weight: 400;
+    border-bottom: 1px solid black;
+}
+
+.side-container-section {
+    width: 55mm;
+    display: flex;
+    flex-direction: column;
+    gap: 4mm;
+
+    /* Content that belongs together */
+}
+
+.side-container-section-enumeration {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.side-container-item-subtitle {
+    margin-left: 3mm;
+}
+
+.name-title {
+    /* Larger text and line underneath */
+}
+.name-subtitle {
+    /* text directly under name-title line */
+}
+
+.time-line-title {
+    /*e.g. Bildungsweg*/
+    /* medium text and line underneath */
+}
+
+.time-entry-header-container {
+    /*Some kind of seperation between elements*/
+}
+
+.time-entry-title {
+    /* bold text normal size */
+    /*Example Matura, Company Name*/
+}
+
+.time-entry-subtitle {
+    /* Should be directly under the title, maybe in gray or so */
+    /* bold text normal size */
+    /* Example: University Name, Role in Company */
+}
+
+.time-entry-date {
+    /*The date in which this thing was done*/
+}
+
+.time-entry-content-container {
+    /* Contains the content for a time entry */
+}
+
+.time-entry-content-title {
+    
+}
+
+.time-entry-content-text {
+/* todo maybe not needed */
+}
+
+.time-entry-content-section {
+    /* Content that belongs together in a time entry */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

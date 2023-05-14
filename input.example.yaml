@@ -1,0 +1,39 @@
+name: XXX
+image_path: portrait.jpeg
+title: Msc.
+birth_date: XX. XXX 199X
+address_street: XXX Street
+address_postal_code: XXXX
+address_city: XXXX
+email: XXX@XXX.com
+languages: 
+  - German (Speaking and Writing)
+  - English (Speaking and Writing)
+skills: 
+  - Java
+  - C#
+  - Javascript
+  - Typescript
+  - Unity
+  - Blender
+interests:
+  - Distributed Systems
+  - Machine learning
+educational_path: # Newest first
+  - name: Matura
+    institute: HTL XXX
+    main_focus: IT
+    highlights:
+      - title: Bachelor Thesis
+        subtitle: Name of the thesis
+    grade: Good
+    start_year: 2000
+    end_year: 2005
+work_experience: # Newest first
+  - company_name: XXX
+    role: XXX
+    start_date: 08 20XX 
+    end_date: 06 20XX
+    projects: 
+      - Worked on XXX
+      - Completed XXX

@@ -1,0 +1,65 @@
+<html>
+
+<link rel="stylesheet" href="main.css">
+
+<body>
+    <div class="page-container">
+        <div class="side-container">
+            <img class="side-container-image" src="{{image_path}}">
+            <div class="side-container-personal-info">
+                {{birth_date}}
+                <br>
+                {{citizenship}} 
+            </div> 
+            <div class="side-container-personal-info">
+                {{address_street}}<br>
+                {{address_postal_code}} {{address_city}}<br>
+                {{email}}
+            </div> 
+            <div class="side-container-section">
+                  <div class="side-container-section-title">
+                    Sprachen
+                  </div>
+
+                 {% for lang in languages %}
+                    <div>{{ lang }}</div>
+                 {% endfor %}
+            </div> 
+            <div class="side-container-section">
+                <div class="side-container-section-title">
+                    Developer Skills [Auszug]
+                </div>
+                <div class="side-container-section-enumeration">
+                    {% for skill in skills %}
+                         <div>{{ skill }}</div>
+                        {{ ",&nbsp" if not loop.last else "" }}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="side-container-section">
+                <div class="side-container-section-title">
+                    Interessen
+                </div>
+
+                {% for interest in interests %}
+                <div>
+                    <div>{{ interest.title }}</div>
+                    {% if interest.subtitle != 'null' %}
+                        <div class="side-container-item-subtitle">
+                            {{ interest.subtitle }}
+                        </div>
+                    {% endif %}
+                </div>
+                    
+                {% endfor %}
+                
+
+            </div>
+        </div>
+        <div class="time-line-container">
+
+        </div>
+    </div>
+</body>
+</html>
+
