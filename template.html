@@ -33,8 +33,10 @@
                         </div>
                         <div class="side-container-section-enumeration">
                             {% for skill in skills %}
-                                 <div>{{ skill }}</div>
-                                {{ ",&nbsp" if not loop.last else "" }}
+                            <div>  
+                                {{ skill }}{{ ",&nbsp" if not loop.last else "" }}
+
+                            </div>
                             {% endfor %}
                         </div>
                     </div>
