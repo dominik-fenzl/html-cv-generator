@@ -160,5 +160,5 @@ cython_debug/
 #.idea/
 
 input.yaml
-resources/portrait.png
 output.html
+resources

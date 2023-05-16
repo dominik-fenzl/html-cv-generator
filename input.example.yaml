@@ -1,4 +1,5 @@
-name: XXX
+first_name: XXX
+last_name: XXX
 image_path: portrait.jpeg
 title: Msc.
 birth_date: XX. XXX 199X
@@ -25,7 +26,8 @@ educational_path: # Newest first
     main_focus: IT
     highlights:
       - title: Bachelor Thesis
-        subtitle: Name of the thesis
+        subtitles: 
+          - Name of the thesis
     grade: Good
     start_year: 2000
     end_year: 2005
@@ -37,3 +39,7 @@ work_experience: # Newest first
     projects: 
       - Worked on XXX
       - Completed XXX
+
+# Helper css classes
+# You can wrap html elements around every text and use the following helper styles
+# <span class="project-name">text that is a project or title, for example master thesis title</span>

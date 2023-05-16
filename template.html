@@ -1,65 +1,137 @@
 <html>
 
 <link rel="stylesheet" href="main.css">
-
+<!-- TODO Change image  -->
 <body>
-    <div class="page-container">
-        <div class="side-container">
-            <img class="side-container-image" src="{{image_path}}">
-            <div class="side-container-personal-info">
-                {{birth_date}}
-                <br>
-                {{citizenship}} 
-            </div> 
-            <div class="side-container-personal-info">
-                {{address_street}}<br>
-                {{address_postal_code}} {{address_city}}<br>
-                {{email}}
-            </div> 
-            <div class="side-container-section">
-                  <div class="side-container-section-title">
-                    Sprachen
-                  </div>
-
-                 {% for lang in languages %}
-                    <div>{{ lang }}</div>
-                 {% endfor %}
-            </div> 
-            <div class="side-container-section">
-                <div class="side-container-section-title">
-                    Developer Skills [Auszug]
-                </div>
-                <div class="side-container-section-enumeration">
-                    {% for skill in skills %}
-                         <div>{{ skill }}</div>
-                        {{ ",&nbsp" if not loop.last else "" }}
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="side-container-section">
-                <div class="side-container-section-title">
-                    Interessen
-                </div>
-
-                {% for interest in interests %}
-                <div>
-                    <div>{{ interest.title }}</div>
-                    {% if interest.subtitle != 'null' %}
-                        <div class="side-container-item-subtitle">
-                            {{ interest.subtitle }}
+    <div class="sheet-outer A4">
+        <div class="sheet">
+            <div class="page-container">
+                <div class="side-container">
+                    <img class="side-container-image" src="{{image_path}}">
+                    <div class="side-container-personal-info">
+                        {{birth_date}}
+                        <br>
+                        {{citizenship}} 
+                    </div> 
+                    <div class="side-container-personal-info">
+                        {{address_street}}<br>
+                        {{address_postal_code}} {{address_city}}<br>
+                        {{email}}
+                    </div> 
+                    <div class="side-container-section">
+                          <div class="side-container-section-title">
+                            Sprachen
+                          </div>
+        
+                         {% for lang in languages %}
+                            <div>{{ lang }}</div>
+                         {% endfor %}
+                    </div> 
+                    <div class="side-container-section">
+                        <div class="side-container-section-title">
+                            Developer Skills [Auszug]
                         </div>
-                    {% endif %}
+                        <div class="side-container-section-enumeration">
+                            {% for skill in skills %}
+                                 <div>{{ skill }}</div>
+                                {{ ",&nbsp" if not loop.last else "" }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="side-container-section">
+                        <div class="side-container-section-title">
+                            Interessen
+                        </div>
+        
+                        {% for interest in interests %}
+                        <div>
+                            <div>{{ interest.title }}</div>
+                            {% if interest.subtitle != 'null' %}
+                                <div class="side-container-item-subtitle">
+                                    {{ interest.subtitle }}
+                                </div>
+                            {% endif %}
+                        </div>
+                            
+                        {% endfor %}
+                        
+        
+                    </div>
                 </div>
+                <div class="time-line-container">
+                    <div class="name-title">
+                        <div class="last-name">{{last_name}}</div>
+                        <div>{{first_name}}</div>
+                    </div>
+                    <div class="name-subtitle">
+                        {{title}}
+                    </div>
+                    <div class="time-line-title">
+                        Bildungsweg
+                    </div>
+                    {% for edu in educational_path %}
+                        <div class="time-entry-header-container">
+                            <div class="time-entry-title-container">
+                                <div class="time-entry-title">{{edu.name}}</div>
+                                <div class="time-entry-subtitle">{{edu.institute}}</div>
+                            </div>
+                            <div>{{edu.start_year}} - {{edu.end_year}}</div>
+                        </div>
+                        <div class="time-entry-content-container">
+                            {% for highlight in edu.highlights %}
+                                <div class="time-entry-content-title">
+                                    {{highlight.title}}
+                                </div>
+                                <div class="time-entry-content-section">
+                                    {% for subtitle in highlight.subtitles%}
+                                    <div class="time-entry-content-text">
+                                        {{subtitle}}
+                                    </div>
+                                    {% endfor %}                        
+                                </div>
+                            {% endfor %}
+                            <div class="time-entry-content-single-text">{{edu.grade}}</div>
+                        </div>
+                    {% endfor %}
                     
-                {% endfor %}
-                
-
+                    <div class="time-line-title">
+                        Berufserfahrung
+                    </div>
+                    {% for exp in work_experience %}
+                    <div class="time-entry-header-container">
+                        <div class="time-entry-title-container">
+                            <div class="time-entry-title">{{exp.company_name}}</div>
+                            <div class="time-entry-subtitle">{{exp.role}}</div>
+                        </div>
+                        {% if exp.end_date != 'null' %}
+                            <div class="time-entry-date-work-experience">{{exp.start_date}} - {{exp.end_date}}</div>
+                        {% else %}
+                            <div class="time-entry-date-work-experience">{{exp.start_date}}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <div style="margin-top:3mm" class="time-entry-content-container">
+                        <div class="time-entry-content-section">
+                            {% for project in exp.projects%}
+                            <ul>
+                                <li>
+                                    <div class="time-entry-content-text">
+                                        {{project}}
+                                    </div>
+                                </li>
+                            </ul>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    
+                    {% endfor %}
+        
+                </div>
             </div>
-        </div>
-        <div class="time-line-container">
-
         </div>
     </div>
+   
 </body>
 </html>
 

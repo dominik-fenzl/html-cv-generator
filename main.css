@@ -2,19 +2,75 @@
 @font-face {
     font-family: jost;
     src: url("Fonts/Jost-VariableFont_wght.ttf") format("truetype");
-}
 
-@page {
-    size: A4;
-    margin: 0;
+
+    font-family: jost-italic;
+    src: url("Fonts/Jost-Italic-VariableFont_wght.ttf") format("truetype");
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: "jost", sans-serif;
-    font-weight: 200;
-    font-size: 12pt;
+    font-weight: 300;
+    font-size: 10.5pt;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: '-  '
+
+}
+
+.sheet-outer {
+    margin: 0;
+}
+.sheet {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    page-break-after: always;
+}
+
+@media screen {
+    body { 
+        background: #e0e0e0 
+    }
+   
+    .sheet {
+        background: white;
+        box-shadow: 0 .5mm 2mm rgba(0,0,0,.3); 
+        margin: 5mm auto;
+    }
+}
+
+@page {
+    size: A4;
+    margin: 0
+}
+
+@media print {
+    .sheet-outer.A4, .sheet-outer.A5.landscape { 
+        width: 210mm 
+    }
+}
+
+
+
+.project-name {
+    font-family: "jost-italic", sans-serif;;
+}
+
+.sheet-outer.A4 .sheet { 
+    width: 210mm; 
+    height: 296mm 
 }
 
 .page-container {
@@ -24,13 +80,18 @@ body {
 
 .side-container {
     width: 75mm;
-    height: 100vh;
+    height: 298mm;
     display: flex;
     flex-direction: column;
     background-color: #b9bcc9;
     align-items: flex-start;
-    padding: 10mm;
-    gap: 8mm;
+
+    padding-top: 8mm;
+    padding-bottom: 10mm;
+    padding-left: 10mm;
+    padding-right: 10mm;
+    gap: 6mm;
+    font-size: 11pt;
 }
 
 .time-line-container {
@@ -38,18 +99,21 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    padding-top: 8mm;
+    padding-bottom: 25mm;
+    padding-left: 5mm;
+    padding-right: 20mm;
 }
 
 .side-container-image {
-    width: 40mm;
-    height: 40mm;
-    
+    width: 55mm;
+    height: 55mm;
+    object-fit: cover;
 }
 
 .side-container-personal-info {
     /* Bold text used for birthday, address etc.. */
     font-weight: 400;
-
 }
 
 .side-container-section-title {
@@ -70,6 +134,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    line-height: 8mm;
 }
 
 .side-container-item-subtitle {
@@ -77,51 +142,89 @@ body {
 }
 
 .name-title {
+    display: flex;
+    flex-direction: column;
+    font-size: 18pt;
+    font-weight: 400;
+    line-height: 1.1;
+    border-bottom: 1px solid black;
     /* Larger text and line underneath */
 }
+
 .name-subtitle {
     /* text directly under name-title line */
+    font-weight: 400;
 }
 
 .time-line-title {
+    margin-top: 4mm;
+    font-weight: 500;
+    border-bottom: 1px solid black;
+    font-size: 12pt;
     /*e.g. Bildungsweg*/
     /* medium text and line underneath */
 }
 
 .time-entry-header-container {
     /*Some kind of seperation between elements*/
+    margin-top: 3mm;
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: start;
+    
+}
+
+.time-entry-date-work-experience {
+    width: 32mm;
+}
+
+.time-entry-title-container {
+    display: flex;
+    flex-direction: column;
+    /*A container to have title and subtitle below each other*/
 }
 
 .time-entry-title {
+    width: 80mm;
+    
+    font-weight: 400;
     /* bold text normal size */
     /*Example Matura, Company Name*/
 }
 
 .time-entry-subtitle {
+    width: 70mm;
+    margin-left: 2mm;
     /* Should be directly under the title, maybe in gray or so */
     /* bold text normal size */
     /* Example: University Name, Role in Company */
 }
 
-.time-entry-date {
-    /*The date in which this thing was done*/
-}
-
 .time-entry-content-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15mm;
+
     /* Contains the content for a time entry */
 }
 
 .time-entry-content-title {
-    
+    margin-top: 3mm;
+    font-weight: 400;
+}
+
+.time-entry-content-single-text {
+    margin-top: 3mm;
 }
 
 .time-entry-content-text {
-/* todo maybe not needed */
+    font-size: 9pt;
+    line-height: 1.6;
 }
 
-.time-entry-content-section {
-    /* Content that belongs together in a time entry */
-}
+
 
 
 
