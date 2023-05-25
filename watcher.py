@@ -6,7 +6,7 @@ from watchdog.events import FileSystemEventHandler
 from subprocess import Popen
 
 # Customize the command to execute your script
-command = [sys.executable, 'generator.py']
+command = [sys.executable, 'generate_cv.py']
 
 class TemplateChangeHandler(FileSystemEventHandler):
     def on_modified(self, event):
