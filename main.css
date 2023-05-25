@@ -28,6 +28,11 @@ ul {
 
 }
 
+
+a {
+    color: black;
+}
+
 .sheet-outer {
     margin: 0;
     padding: 0;
@@ -69,6 +74,15 @@ ul {
 
 }
 
+.ml-5{
+    margin-left: 5px;
+}
+
+.simple-centered-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 
 .project-name {

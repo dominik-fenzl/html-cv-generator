@@ -7,6 +7,7 @@ address_street: XXX Street
 address_postal_code: XXXX
 address_city: XXXX
 email: XXX@XXX.com
+phone_number: +XX XXX XXXXXXX
 languages: 
   - German (Speaking and Writing)
   - English (Speaking and Writing)
