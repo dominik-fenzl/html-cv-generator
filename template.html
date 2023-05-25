@@ -3,7 +3,9 @@
 <link rel="stylesheet" href="main.css">
 <!-- TODO Change image  -->
 <body>
+    
     <div class="sheet-outer A4">
+        {% for page in pages %}
         <div class="sheet">
             <div class="page-container">
                 <div class="side-container">
@@ -61,7 +63,7 @@
                         {% for interest in interests %}
                         <div>
                             <div>{{ interest.title }}</div>
-                            {% if interest.subtitle != 'null' %}
+                            {% if interest.subtitle is defined %}
                                 <div class="side-container-item-subtitle">
                                     {{ interest.subtitle }}
                                 </div>
@@ -81,10 +83,12 @@
                     <div class="name-subtitle">
                         {{title}}
                     </div>
+                    {% if page.educational_path is defined %}
                     <div class="time-line-title">
                         Bildungsweg
                     </div>
-                    {% for edu in educational_path %}
+                    
+                    {% for edu in page.educational_path %}
                         <div class="time-entry-header-container">
                             <div class="time-entry-title-container">
                                 <div class="time-entry-title">{{edu.name}}</div>
@@ -108,17 +112,19 @@
                             <div class="time-entry-content-single-text">{{edu.grade}}</div>
                         </div>
                     {% endfor %}
-                    
+                    {% endif %}
+
+                    {% if page.work_experience is defined %}
                     <div class="time-line-title">
                         Berufserfahrung
                     </div>
-                    {% for exp in work_experience %}
+                    {% for exp in page.work_experience %}
                     <div class="time-entry-header-container">
                         <div class="time-entry-title-container">
                             <div class="time-entry-title">{{exp.company_name}}</div>
                             <div class="time-entry-subtitle">{{exp.role}}</div>
                         </div>
-                        {% if exp.end_date != 'null' %}
+                        {% if exp.end_date is defined %}
                             <div class="time-entry-date-work-experience">{{exp.start_date}} - {{exp.end_date}}</div>
                         {% else %}
                             <div class="time-entry-date-work-experience">{{exp.start_date}}</div>
@@ -141,10 +147,46 @@
                     
                     
                     {% endfor %}
+                    {% endif %}
+
+                    {% if page.international_experience is defined %}
+                    <div class="time-line-title">
+                        Internationale Erfahrungen
+                    </div>
+                    {% for exp in page.international_experience %}
+                    <div class="time-entry-header-container">
+                        <div class="time-entry-title-container">
+                            <div class="time-entry-title">{{exp.country}}</div>
+                        </div>
+                        {% if exp.end_date is defined %}
+                            <div class="time-entry-date-work-experience">{{exp.start_date}} - {{exp.end_date}}</div>
+                        {% else %}
+                            <div class="time-entry-date-work-experience">{{exp.start_date}}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <div style="margin-top:3mm" class="time-entry-content-container">
+                        <div class="time-entry-content-section">
+                            {% for activity in exp.activities%}
+                            <ul>
+                                <li>
+                                    <div class="time-entry-content-text">
+                                        {{ activity }}
+                                    </div>
+                                </li>
+                            </ul>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    
+                    {% endfor %}
+                    {% endif %}
         
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
    
 </body>

@@ -21,26 +21,60 @@ skills:
 interests:
   - Distributed Systems
   - Machine learning
-educational_path: # Newest first
-  - name: Matura
-    institute: HTL XXX
-    main_focus: IT
-    highlights:
-      - title: Bachelor Thesis
-        subtitles: 
-          - Name of the thesis
-    grade: Good
-    start_year: 2000
-    end_year: 2005
-work_experience: # Newest first
-  - company_name: XXX
-    role: XXX
-    start_date: 08 20XX 
-    end_date: 06 20XX
-    projects: 
-      - Worked on XXX
-      - Completed XXX
 
+# You can add as many pages as you want
+# You can also add the properties educational_path, work_experience, and international_experience to every page or leave it out
+# Decide which content should go on which site by adding the relevant variables
+
+pages: 
+  - page: 1
+    educational_path: # Newest first
+      - name: Matura
+        institute: HTL XXX
+        main_focus: IT
+        highlights:
+          - title: Bachelor Thesis
+            subtitles: 
+              - Name of the thesis
+        grade: Good
+        start_year: 2000
+        end_year: 2005
+    work_experience: # Newest first
+      - company_name: XXX
+        role: XXX
+        start_date: 08 20XX 
+        end_date: 06 20XX
+        projects: 
+          - Worked on XXX
+          - Completed XXX
+    
+  - page: 2
+    educational_path: # Newest first
+      - name: Matura
+        institute: HTL XXX
+        main_focus: IT
+        highlights:
+          - title: Bachelor Thesis
+            subtitles: 
+              - Name of the thesis
+        grade: Good
+        start_year: 2000
+        end_year: 2005
+    work_experience: # Newest first
+      - company_name: XXX
+        role: XXX
+        start_date: 08 20XX 
+        end_date: 06 20XX
+        projects: 
+          - Worked on XXX
+          - Completed XXX
+    international_experience:
+      - country: Interesting Country
+        start_date: 12/20XX
+        end_date: 03/20XX
+        activities:
+          - did something interesting there
+          - went to a language school
 # Helper css classes
 # You can wrap html elements around every text and use the following helper styles
 # <span class="project-name">text that is a project or title, for example master thesis title</span>
