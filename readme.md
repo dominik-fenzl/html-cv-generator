@@ -51,7 +51,7 @@ Please ensure that you have Ghostscript installed on your system to execute the 
 
 ## Example HTML CV
 
-![Example CV](resources/example.png)
+![Example CV](documentation/example.png)
 
 This image showcases an example of the generated HTML CV using our project. 
 Please note that the actual content and design may vary based on the data provided.
