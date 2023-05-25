@@ -55,6 +55,8 @@ Please ensure that you have Ghostscript installed on your system to execute the 
 
 This image showcases an example of the generated HTML CV using our project. 
 Please note that the actual content and design may vary based on the data provided.
+Photo in Example CV from https://unsplash.com/de/fotos/3JmfENcL24M.
+
 
 
 ## Example Configuration
