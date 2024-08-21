@@ -3,7 +3,7 @@ from strictyaml import load, Map, Str, Int, Seq, YAMLError
 
 
 def start_generation():
-    with open('input.yaml','r') as f:
+    with open('CVs/input.yaml','r') as f:
         cv_input = load(f.read()).data
 
     with open('main.css', 'r') as f:
