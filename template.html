@@ -35,7 +35,7 @@
                     </div> 
                     <div class="side-container-section">
                           <div class="side-container-section-title">
-                            Sprachen
+                            {{ t.languages }}
                           </div>
         
                          {% for lang in languages %}
@@ -44,7 +44,7 @@
                     </div> 
                     <div class="side-container-section">
                         <div class="side-container-section-title">
-                            Developer Skills [Auszug]
+                            {{ t.skills }}
                         </div>
                         <div class="side-container-section-enumeration">
                             {% for skill in skills %}
@@ -57,7 +57,7 @@
                     </div>
                     <div class="side-container-section">
                         <div class="side-container-section-title">
-                            Interessen
+                            {{ t.interests }}
                         </div>
         
                         {% for interest in interests %}
@@ -83,40 +83,9 @@
                     <div class="name-subtitle">
                         {{title}}
                     </div>
-                    {% if page.educational_path is defined %}
-                    <div class="time-line-title">
-                        Bildungsweg
-                    </div>
-                    
-                    {% for edu in page.educational_path %}
-                        <div class="time-entry-header-container">
-                            <div class="time-entry-title-container">
-                                <div class="time-entry-title">{{edu.name}}</div>
-                                <div class="time-entry-subtitle">{{edu.institute}}</div>
-                            </div>
-                            <div>{{edu.start_year}} - {{edu.end_year}}</div>
-                        </div>
-                        <div class="time-entry-content-container">
-                            {% for highlight in edu.highlights %}
-                                <div class="time-entry-content-title">
-                                    {{highlight.title}}
-                                </div>
-                                <div class="time-entry-content-section">
-                                    {% for subtitle in highlight.subtitles%}
-                                    <div class="time-entry-content-text">
-                                        {{subtitle}}
-                                    </div>
-                                    {% endfor %}                        
-                                </div>
-                            {% endfor %}
-                            <div class="time-entry-content-single-text">{{edu.grade}}</div>
-                        </div>
-                    {% endfor %}
-                    {% endif %}
-
                     {% if page.work_experience is defined %}
                     <div class="time-line-title">
-                        Berufserfahrung
+                        {{ t.work_experience }}
                     </div>
                     {% for exp in page.work_experience %}
                     <div class="time-entry-header-container">
@@ -149,9 +118,43 @@
                     {% endfor %}
                     {% endif %}
 
+
+                    {% if page.educational_path is defined %}
+                    <div class="time-line-title">
+                        {{ t.educational_path }}
+                    </div>
+                    
+                    {% for edu in page.educational_path %}
+                        <div class="time-entry-header-container">
+                            <div class="time-entry-title-container">
+                                <div class="time-entry-title">{{edu.name}}</div>
+                                <div class="time-entry-subtitle">{{edu.institute}}</div>
+                            </div>
+                            <div>{{edu.start_year}} - {{edu.end_year}}</div>
+                        </div>
+                        <div class="time-entry-content-container">
+                            {% for highlight in edu.highlights %}
+                                <div class="time-entry-content-title">
+                                    {{highlight.title}}
+                                </div>
+                                <div class="time-entry-content-section">
+                                    {% for subtitle in highlight.subtitles%}
+                                    <div class="time-entry-content-text">
+                                        {{subtitle}}
+                                    </div>
+                                    {% endfor %}                        
+                                </div>
+                            {% endfor %}
+                            <div class="time-entry-content-single-text">{{edu.grade}}</div>
+                        </div>
+                    {% endfor %}
+                    {% endif %}
+
+
+
                     {% if page.international_experience is defined %}
                     <div class="time-line-title">
-                        Internationale Erfahrungen
+                        {{ t.international_experience }}
                     </div>
                     {% for exp in page.international_experience %}
                     <div class="time-entry-header-container">

@@ -1,3 +1,4 @@
+language: en # de or en - controls the template section titles
 first_name: XXX
 last_name: XXX
 image_path: portrait.jpeg
